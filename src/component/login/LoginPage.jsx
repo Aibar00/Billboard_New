@@ -5,13 +5,12 @@ import mainAmazon from "../../assets/main_amazon.png"
 import mainBillboard from "../../assets/main_LOGO.png"
 import { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
-import { useToasts } from "react-toast-notifications";
+import { toast } from 'react-toastify';
 
 const LoginPage = () =>{
 
     const navigate = useNavigate();
     const location = useLocation();
-    const {addToast} = useToasts();
 
     const [formData, setFormData] = useState({
         username: '',
@@ -40,7 +39,7 @@ const LoginPage = () =>{
                 const decodedToken = jwtDecode(token)
                 localStorage.setItem("role", decodedToken.role)
                 navigate("/billboard")
-                addToast("Welcome", {appearance:"success"})
+                toast.success('Welcome!');
             }
             else {
                 console.error('HTTP Error:', res.status); 

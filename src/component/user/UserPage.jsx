@@ -23,23 +23,24 @@ const UserPage = () =>{
         })
         console.log("Bearer " + localStorage.getItem("token"));
         console.log("Form was submitted")
-        if(res.ok) {
-            const json = await res.text()
-            setUsername(json)
-        } else{
-            setUsername("Not working ishak")
-        }
+        // if(res.ok) {
+        //     const json = await res.text()
+        //     setUsername(json)
+        // } else{
+        //     setUsername("Not working ishak")
+        // }
     }
 
     return (
         <>
             <main className={styles.container}>
                 <div className={styles.content} data-testid="signed">
-                    {
+                    {/* {
                         item !== null ?
                         <p>Signed in as {username}</p> :
                         <p>UNAUTHORIZED</p>
-                    }
+                    } */}
+                    
                </div>
             </main>
         </>
